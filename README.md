@@ -1,7 +1,7 @@
 # cranrepo
 
 #run it and mount /R outside container
-docker run --detach --privileged  -ti -e "container=docker" --name=cranrepo -v /sys/fs/cgroup:/sys/fs/cgroup -v /c/Users/<your user>/cranrepo:/cranrepo chiefware/cranrepo
+docker run --detach --privileged  -ti -e "container=docker" --name=cranrepo /c/Users/<your user>/cranrepo:/cranrepo chiefware/cranrepo
 #to pull all cran files
 docker exec cranrepo bash -c 'R CMD BATCH /cran.cmd'
 #if you behind proxy
